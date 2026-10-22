@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Forever Love, Miz LAURIE ❤️💍🌹</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #2b1055, #7597de, #b15d70, #20002c);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            color: #fff;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Sparkles Canvas */
+        #sparkleCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Balloons Container */
+        .balloon-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .balloon {
+            position: absolute;
+            bottom: -150px;
+            width: 60px;
+            height: 75px;
+            border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+            animation: floatUp 8s linear infinite;
+            opacity: 0.85;
+            box-shadow: inset -8px -8px 0px rgba(0, 0, 0, 0.15);
+        }
+
+        .balloon::before {
+            content: "";
+            position: absolute;
+            bottom: -12px;
+            left: 26px;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 12px solid inherit;
+        }
+
+        .balloon::after {
+            content: "";
+            position: absolute;
+            bottom: -60px;
+            left: 29px;
+            width: 2px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(-120vh) rotate(20deg);
+                opacity: 0;
+            }
+        }
+
+        /* Romantic Card Container */
+        .card-container {
+            position: relative;
+            z-index: 10;
+            max-width: 650px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            animation: popIn 1.2s ease forwards;
+        }
+
+        @keyframes popIn {
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .card-container h1 {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 12px rgba(255, 192, 203, 0.9);
+            color: #fff0f5;
+        }
+
+        .highlight-name {
+            color: #ffb7c5;
+            font-style: italic;
+        }
+
+        .card-container p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #fdfefe;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        }
+
+        .icons-row {
+            font-size: 2.8rem;
+            display: inline-block;
+            margin-top: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        .music-btn {
+            margin-top: 25px;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            color: white;
+            font-size: 1.05rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .music-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 117, 140, 0.6);
+        }
+
+        @media (max-width: 600px) {
+            .card-container {
+                padding: 25px;
+            }
+            .card-container h1 {
+                font-size: 1.8rem;
+            }
+            .card-container p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="sparkleCanvas"></canvas>
+    
+    <div class="balloon-container" id="balloonContainer"></div>
+
+    <div class="card-container">
+        <h1>To My Dearest <span class="highlight-name">Miz LAURIE</span> ❤️🌹</h1>
+        <p>
+            My sweet <strong>Miz LAURIE</strong>, from the moment you stepped into my life, everything became infinitely brighter and more beautiful. 
+            Your gentle smile lights up my entire world, and your voice brings a peace to my heart that words could never fully explain.
+        </p>
+        <p>
+            I built this special place just for you, to remind you that you are my heart, my soulmate, and my forever. 
+            No matter where life takes us, my love for you grows deeper with every single breath I take.
+        </p>
+        <p>
+            Thank you for being my dream come true, for loving me, and for filling my world with pure magic.
+        </p>
+        
+        <div class="icons-row">❤️ 💍 🌹</div>
+        <br>
+        <button class="music-btn" onclick="triggerExtraLove()">Click for Extra Love 💖</button>
+    </div>
+
+    <script>
+        // --- 1. Sparkles Effect ---
+        const canvas = document.getElementById('sparkleCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const particles = [];
+        const particleCount = 75;
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.alpha = Math.random();
+                this.speedAlpha = 0.01 + Math.random() * 0.02;
+                this.maxAlpha = 0.8 + Math.random() * 0.2;
+                this.color = `hsl(${Math.random() * 60 + 330}, 100%, 85%)`;
+            }
+
+            update() {
+                this.alpha += this.speedAlpha;
+                if (this.alpha >= this.maxAlpha || this.alpha <= 0) {
+                    this.speedAlpha = -this.speedAlpha;
+                }
+                if (this.alpha <= 0) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateSparkles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateSparkles);
+        }
+        animateSparkles();
+
+        // --- 2. Floating Balloons ---
+        const balloonContainer = document.getElementById('balloonContainer');
+        const colors = ['#ff4d6d', '#ff758c', '#ff8fa3', '#c77dff', '#e0aaff', '#ffb703'];
+
+        function createBalloon() {
+            const balloon = document.createElement('div');
+            balloon.classList.add('balloon');
+
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            balloon.style.backgroundColor = color;
+            balloon.style.left = Math.random() * 95 + 'vw';
+            
+            const duration = 6 + Math.random() * 6;
+            balloon.style.animationDuration = duration + 's';
+
+            balloonContainer.appendChild(balloon);
+
+            setTimeout(() => {
+                balloon.remove();
+            }, duration * 1000);
+        }
+
+        // Create initial balloons and keep spawning
+        for (let i = 0; i < 15; i++) {
+            setTimeout(createBalloon, i * 400);
+        }
+        setInterval(createBalloon, 800);
+
+        // --- 3. Interactive Extra Love Button ---
+        function triggerExtraLove() {
+            for (let i = 0; i < 30; i++) {
+                setTimeout(createBalloon, i * 50);
+            }
+            
+            // Floating popup message for Miz LAURIE
+            const heart = document.createElement('div');
+            heart.innerText = "I Love You Forever, Miz LAURIE! ❤️💍🌹";
+            heart.style.position = 'fixed';
+            heart.style.top = '50%';
+            heart.style.left = '50%';
+            heart.style.transform = 'translate(-50%, -50%) scale(0)';
+            heart.style.fontSize = '1.8rem';
+            heart.style.color = '#fff';
+            heart.style.background = 'rgba(255, 77, 109, 0.95)';
+            heart.style.padding = '20px 35px';
+            heart.style.borderRadius = '35px';
+            heart.style.zIndex = '100';
+            heart.style.textAlign = 'center';
+            heart.style.transition = 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            heart.style.boxShadow = '0 10px 35px rgba(0,0,0,0.5)';
+            
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.style.transform = 'translate(-50%, -50%) scale(1.1)';
+            }, 50);
+
+            setTimeout(() => {
+                heart.style.transform = 'translate(-50%, -50%) scale(0)';
+                setTimeout(() => heart.remove(), 500);
+            }, 3000);
+        }
+    </script>
+</body>
+  </html>
+  
